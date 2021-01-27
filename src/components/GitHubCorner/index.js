@@ -1,4 +1,6 @@
-// src/components/GitHubCorner/index.js
+/* eslint-disable eol-last */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -32,7 +34,6 @@ const SVGWrapper = styled.svg`
   }
 `;
 
-// eslint-disable-next-line react/prop-types
 export default function GitHubCorner({ projectUrl }) {
   return (
     <Wrapper>
