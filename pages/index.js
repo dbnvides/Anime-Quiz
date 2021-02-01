@@ -1,10 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable key-spacing */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/style-prop-object */
-/* eslint-disable eol-last */
-/* eslint-disable func-names */
-/* eslint-disable no-console */
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
@@ -15,6 +8,8 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -52,38 +47,28 @@ export default function Home() {
               <div>
                 <p>Teste os seus conhecimentos sobre Anime, se divirta encarando varios outros quizes! </p>
               </div>
-              <input
-                style={{
-                  height: '38px',
-                  width: '281px',
-                  marginLeft: 'auto',
-                }}
-                onChange={function (infosDoEvento) {
-                  console.log(infosDoEvento.target.value);
-                  // State
-                  // name = infosDoEvento.target.value;
-                  setName(infosDoEvento.target.value);
-                }}
+              <Input
+                name="nameDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
                 placeholder="Escreva seu nome"
+                value={name}
               />
-              <p></p>
+              <p />
               <div>
-                <button
+                <Button
                   style={{
                     height: '36px',
                     width: '238px',
-                    backgroundColor:'#2196f3',
+                    backgroundColor: '#2196f3',
                     marginLeft: '20px',
-                    borderRadius: '4px'
+                    borderRadius: '4px',
                   }}
                   type="submit"
                   disabled={name.length === 0}
                 >
-                  Jogar
-                  {name}
-                </button>
-                <div>
-                </div>
+                  {`Jogar ${name}`}
+                </Button>
+                <div />
               </div>
             </form>
           </Widget.Content>
